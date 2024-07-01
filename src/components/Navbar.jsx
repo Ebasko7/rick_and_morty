@@ -1,20 +1,19 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function MyNavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-purple-700">
       <Container>
-        <Navbar.Brand as={Link} to='/'>Rick and Morty</Navbar.Brand>
+        <Navbar.Brand as={Link} to='/' className="text-purple-500">Rick and Morty</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link as ={Link} to='/about'>About</Nav.Link>
-            <Nav.Link as ={Link} to='/characters'>Characters</Nav.Link>
+          <Nav className="mx-auto">
+            <Nav.Link as={Link} to='/' className="text-purple-500">Home</Nav.Link>
+            <Nav.Link as={Link} to='/about' className="text-purple-500">About</Nav.Link>
+            <Nav.Link as={Link} to='/characters' className="text-purple-500">Characters</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -22,4 +21,4 @@ function MyNavBar() {
   );
 }
 
-export default MyNavBar
+export default MyNavBar;

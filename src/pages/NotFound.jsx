@@ -1,7 +1,12 @@
+import MyNavBar from "../components/Navbar"
+
 function NotFound (){
 
     return(
-        <h1>404 Error</h1>
+        <>
+        <MyNavBar />
+        <h1 class='text-red-700'>INTENTIONAL 404 ERROR use the NavBar options to return to another page</h1>
+        </>
     )
 }
 
