@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: "character/:id",
                 element: <CharPage />
-            }
+            },
         ],
         errorElement: <NotFound />,
     }
