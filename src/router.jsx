@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import CharactersPage from "./pages/CharactersPage";
+import CharPage from "./pages/CharPage"
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path: "characters/",
                 element: <CharactersPage />
             },
+            {
+                path: "character/:id",
+                element: <CharPage />
+            }
         ],
         errorElement: <NotFound />,
     }
