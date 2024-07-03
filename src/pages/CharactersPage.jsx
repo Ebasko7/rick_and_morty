@@ -7,15 +7,20 @@ import Col from 'react-bootstrap/Col';
 
 function CharactersPage (){
     const [characters, setCharacters] = useState([])
+    const [pageNum, setPageNum] = useState(1)
 
     useEffect(()=> {
-        const getCharacters = async () => {
-            const response = await axios.get('https://rickandmortyapi.com/api/character')
+        const getCharacters = async (page) => {
+            const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNum}`)
              console.log('heres the', response)
              setCharacters([...characters, ...response.data.results])
+             setPageNum(pageNum+1)
          }
-    getCharacters()
-    }, [])
+            if (pageNum < 43){
+                getCharacters() 
+            }
+
+    }, [pageNum])
 
     return(
         

@@ -22,14 +22,14 @@ if (character.id === null){
     return <h2>Loading</h2>
 }
   return (
-    <>
-    <div className="flex justify-center items-center min-h-screen"> 
-        <img src={character.image} alt="image" />
+
+    <div> 
         <h1>{character.name}</h1>
-        <div>{character.status}</div>
-        <div>{character.species}</div>
+        <img src={character.image} alt="image" />
+        <p>{character.status}</p>
+        <p>{character.species}</p>
     </div>
-    </>
+    
   )
 }
 

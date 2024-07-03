@@ -1,14 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 
 function CharCard({ data }) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const { favorites, addToFavorites, removeFromFavorites } = useOutletContext();
 
-    const navigateToCharacterPage = () => navigate(`/character/${data.id}`)
+    const isFavorite = favorites.some(f => f.id === data.id);
 
-    console.log(data);
+    const favButtonMessage = isFavorite ? 'Remove from favorites' : 'Add to Favorites';
+    const favButtonFunc = isFavorite
+        ? () => removeFromFavorites(data)
+        : () => addToFavorites(data);
+
+    const navigateToCharacterPage = () => navigate(`/character/${data.id}`);
+
     return (
         <Card className="m-4 shadow-lg" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={data.image} />
@@ -19,6 +25,7 @@ function CharCard({ data }) {
                     <h6 className="text-white">Species: {data.species}</h6>
                 </Card.Text>
                 <Button variant="primary" onClick={navigateToCharacterPage}>LEARN MORE</Button>
+                <Button onClick={favButtonFunc}>{favButtonMessage}</Button>
             </Card.Body>
         </Card>
     );
