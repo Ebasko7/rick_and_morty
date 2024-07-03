@@ -15,6 +15,7 @@ function MyNavBar() {
             <Nav.Link as={Link} to='/' className="text-purple-500 text-xl">Home</Nav.Link>
             <Nav.Link as={Link} to='/about' className="text-purple-500 text-xl">About</Nav.Link>
             <Nav.Link as={Link} to='/characters' className="text-purple-500 text-xl">Characters</Nav.Link>
+            <Nav.Link as={Link} to='/favorites' className="text-purple-500 text-xl">Favorites</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
